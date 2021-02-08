@@ -2,10 +2,13 @@
 
 - EpisoPassをCLIから使う
 
-## Installation
+## インストール
 
     $ gem install episopass
 
-## Usage
+## 使い方
 
-    % episopass
+EpisoPass画面をブラウザで開いてパスワード文字列を標準出力で得る
+
+    % episopass [EpisoPassのHTMLのファイル名またはURL]
+
