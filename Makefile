@@ -13,4 +13,4 @@ push: build
 	gem push episopass-`ruby -e 'require "./lib/episopass.rb"; puts EpisoPass::VERSION'`.gem
 
 Gemfile.lock: Gemfile
-	bunele install
+	bundle install
