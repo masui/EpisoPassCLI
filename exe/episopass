@@ -15,9 +15,7 @@ server = WEBrick::HTTPServer.new( # サーバを立てる
 
 # パスワード計算後に/EpisoPassResultに移動                                                                                                                                                                         
 server.mount_proc('/EpisoPassCall') do |req, res|
-  # body = File.read(File.expand_path('~/Passwords/EpisoPassCLI.html')) # パスワード計算するHTML
-
-  body = File.read("#{__dir__}/../data/EpisoPassCLI.html")
+  body = File.read("#{__dir__}/../data/EpisoPassCLI.html") # gemのファイル指定する方法は?
 
   res.status = 200
   res['Content-Type'] = 'text/html'
