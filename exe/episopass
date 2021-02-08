@@ -1,7 +1,21 @@
 #!/usr/bin/env ruby
 
+require 'net/http'
+require 'uri'
 require 'webrick'
 require "episopass"
+
+html = ''
+arg = ARGV[0]
+if arg
+  if arg =~ /^http/
+    html = Net::HTTP.get(URI.parse(arg))
+  elsif File.exist?(arg)
+    html = File.read(arg)
+  end
+else
+  html = File.read("#{__dir__}/../data/EpisoPassCLI.html") # gemのファイル指定する方法は?
+end
 
 opencmd = "open"
 opencmd = "xdg-open" if File.exist?("/usr/bin/xdg-open")
@@ -15,11 +29,10 @@ server = WEBrick::HTTPServer.new( # サーバを立てる
 
 # パスワード計算後に/EpisoPassResultに移動                                                                                                                                                                         
 server.mount_proc('/EpisoPassCall') do |req, res|
-  body = File.read("#{__dir__}/../data/EpisoPassCLI.html") # gemのファイル指定する方法は?
 
   res.status = 200
   res['Content-Type'] = 'text/html'
-  res.body = body
+  res.body = html
 end
 
 # /EpisoPassResult?qwerty のような形式でパスワードを返す                                                                                                                                                                            
