@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+
+require 'webrick'
+require "episopass"
+
+opencmd = "open"
+opencmd = "xdg-open" if File.exist?("/usr/bin/xdg-open")
+
+server = WEBrick::HTTPServer.new( # サーバを立てる                                                                                                                                                                                   
+  :Port => 8000,
+  :HTTPVersion => WEBrick::HTTPVersion.new('1.1'),
+  :AccessLog => [[open(IO::NULL, 'w'), '']], # アクセスログを出力しない                                                                                                                                                              
+  :Logger => WEBrick::Log.new("/dev/null")
+)
+
+# パスワード計算後に/EpisoPassResultに移動                                                                                                                                                                         
+server.mount_proc('/EpisoPassCall') do |req, res|
+  # body = File.read(File.expand_path('~/Passwords/EpisoPassCLI.html')) # パスワード計算するHTML
+
+  body = File.read("#{__dir__}/../data/EpisoPassCLI.html")
+
+  res.status = 200
+  res['Content-Type'] = 'text/html'
+  res.body = body
+end
+
+# /EpisoPassResult?qwerty のような形式でパスワードを返す                                                                                                                                                                            
+server.mount_proc('/EpisoPassResult') do |req, res|
+  password = URI.decode(req.query_string)
+  puts password  # 結果を標準出力
+  
+  server.shutdown
+end
+
+# ブラウザで /EpisoPassCall にアクセスしてパスワード計算画面を開く
+system "#{opencmd} http://localhost:8000/EpisoPassCall"
+
+Signal.trap('INT'){server.shutdown}
+server.start
+
