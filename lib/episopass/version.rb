@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-module Episopass
-  VERSION = "0.1.3"
+module EpisoPass
+  VERSION = "0.1.5"
 end

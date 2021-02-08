@@ -4,7 +4,7 @@ require_relative "lib/episopass/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "episopass"
-  spec.version       = Episopass::VERSION
+  spec.version       = EpisoPass::VERSION
   spec.authors       = ["Toshiyuki Masui"]
   spec.email         = ["masui@pitecan.com"]
 
