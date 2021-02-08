@@ -1,4 +1,11 @@
 # EpisoPass
 
-EpisoPassをCLIから使う
+- EpisoPassをCLIから使う
 
+## Installation
+
+    $ gem install episopass
+
+## Usage
+
+    % episopass
