@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+#
+# コマンドラインからEpisoPassを開いてパスワード文字列を得る
+#
 
 require 'net/http'
 require 'uri'
@@ -14,7 +17,8 @@ if arg
     html = File.read(arg)
   end
 else
-  html = File.read("#{__dir__}/../data/EpisoPassCLI.html") # gemのファイル指定する方法は?
+  # サンプルデータ利用
+  html = File.read("#{__dir__}/../data/sample.html") # gemのファイル指定する方法は?
 end
 
 opencmd = "open"

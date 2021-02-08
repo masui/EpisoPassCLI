@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # spec.files       = ['lib/hello_gem.rb']
-  spec.files         = ['data/EpisoPassCLI.html', 'lib/episopass.rb', 'lib/episopass/version.rb']
+  spec.files         = ['data/sample.html', 'lib/episopass.rb', 'lib/episopass/version.rb']
   spec.executables << 'episopass'
 
   # Uncomment to register a new dependency of your gem
