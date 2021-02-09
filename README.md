@@ -1,6 +1,6 @@
-# EpisoPass
+# EpisoPass CLI
 
-- EpisoPassをCLIから使う
+- EpisoPassをコマンドラインから使う
 
 ## インストール
 
