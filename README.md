@@ -12,6 +12,9 @@ EpisoPass画面をブラウザで開いてパスワード文字列を標準出�
 
     % episopass [EpisoPassのHTMLのファイル名またはURL]
 
+`~/.episopass.html` があればこれが使われる
+
+
 パスワードつきzipを作る
 
     % zip -e my.zip -P `episopass` file1 file2
@@ -30,4 +33,3 @@ EpisoPass画面をブラウザで開いてパスワード文字列を標準出�
 
 ## Issues
 
-- デフォルトのEpisoPass問題を指定できるようにする

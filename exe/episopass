@@ -17,8 +17,11 @@ if arg
     html = File.read(arg)
   end
 else
-  # サンプルデータ利用
-  html = File.read("#{__dir__}/../data/sample.html") # gemのファイル指定する方法は?
+  path = "#{__dir__}/../data/sample.html" # gemのファイル指定する方法は?
+  localpath = File.expand_path("~/.episopass.html")
+  path = localpath if File.exist?(localpath)
+
+  html = File.read(path)
 end
 
 opencmd = "open"
