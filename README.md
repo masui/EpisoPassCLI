@@ -27,3 +27,7 @@ EpisoPass画面をブラウザで開いてパスワード文字列を標準出�
     % zip -e secretfiles.zip -P `episopass` .netrc .gem .npmrc .ssh/id_rsa ...
 
 必要になったときEpisoPassで復元する
+
+## Issues
+
+- デフォルトのEpisoPass問題を指定できるようにする
