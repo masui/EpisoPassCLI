@@ -25,11 +25,9 @@ EpisoPass画面をブラウザで開いてパスワード文字列を標準出�
 
 ## 考察
 
-秘密ファイルをこれで全部隠しておくとよいかもしれない
+秘密ファイルをこれで全部隠しておき、必要になったときEpisoPassで復元すると良いかもしれない
 
     % zip -e secretfiles.zip -P `episopass` .netrc .gem .npmrc .ssh/id_rsa ...
-
-必要になったときEpisoPassで復元する
 
 ## Issues
 
