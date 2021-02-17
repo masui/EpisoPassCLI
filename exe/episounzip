@@ -17,9 +17,10 @@ end
 Dir.mkdir(dir)
 
 path = File.expand_path(epfile)
-system "pushd #{dir} > /dev/null; unzip #{path} ; unzip -P `episopass episopass.html` episopass.zip; rm episopass.zip episopass.html ; popd > /dev/null"
+# system "pushd #{dir} > /dev/null; unzip #{path} ; unzip -P `episopass episopass.html` episopass.zip; rm episopass.zip episopass.html ; popd > /dev/null"
+system "cd #{dir} ; unzip #{path} ; unzip -P `episopass episopass.html` episopass.zip; rm episopass.zip episopass.html"
 
-system "(cd #{dir}; tar cf - ./) | tar xvf -"
+system "(cd #{dir}; tar cf - .) | tar xvf -"
 
 system "/bin/rm -r #{dir}"
 

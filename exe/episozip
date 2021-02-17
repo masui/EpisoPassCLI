@@ -54,7 +54,8 @@ if File.exist?(zipfile)
 end
 
 system "zip -e -P `episopass #{dir}/episopass.html` #{dir}/episopass.zip #{ARGV.join(' ')}"
-system "pushd #{dir} > /dev/null; zip #{zipfile} episopass.zip episopass.html; popd > /dev/null"
+# system "pushd #{dir} > /dev/null; zip #{zipfile} episopass.zip episopass.html; popd > /dev/null"
+system "cd #{dir} ; zip #{zipfile} episopass.zip episopass.html"
 system "/bin/mv #{dir}/#{zipfile} ."
 system "/bin/rm -r #{dir}"
 
