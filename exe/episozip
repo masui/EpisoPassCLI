@@ -1,0 +1,57 @@
+#!/usr/bin/env ruby
+#
+# % episozip [-P episopassのHTML] out.episopass file1 file2
+#
+
+path = File.expand_path("~/.episopass.html")
+if ARGV[0] == "-P"
+  path = ARGV[1]
+  ARGV.shift 2
+end
+
+html = ''
+if path =~ /^http/
+  html = Net::HTTP.get(URI.parse(arg))
+elsif File.exist?(path)
+  html = File.read(path)
+end
+
+if html == ''
+  STDERR.puts "EpisoPass問題(#{path})がみつかりません"
+  exit
+end
+
+dir = "/tmp/EpisoPassDir#{$$}"
+if File.exist?(dir)
+  STDERR.puts "もう一度試してください"
+  exit
+end
+
+Dir.mkdir(dir)
+
+File.open("#{dir}/episopass.html","w"){ |f|
+  f.print html
+}
+
+zipfile = ARGV.shift
+if !zipfile
+  STDERR.puts "出力ファイル名を指定してください"
+  exit
+end
+if zipfile !~ /\.episopass$/
+  STDERR.puts "出力ファイルの拡張子は.episopassにしてください"
+  exit
+end
+if File.exist?(zipfile)
+  STDERR.puts "#{zipfile}が既に存在します"
+  exit
+end
+
+system "zip -e -P `episopass #{dir}/episopass.html` #{dir}/episopass.zip #{ARGV.join(' ')}"
+system "pushd #{dir} > /dev/null; zip #{zipfile} episopass.zip episopass.html; popd > /dev/null"
+system "/bin/mv #{dir}/#{zipfile} ."
+system "/bin/rm -r #{dir}"
+
+
+
+

@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+#
+# % epunzip out.episopass
+#
+
+epfile = ARGV[0]
+if !epfile || !File.exist?(epfile)
+  STDERR.puts "% epunzip file.episopass"
+  exit
+end
+
+dir = "/tmp/EpisoPassDir#{$$}"
+if File.exist?(dir)
+  STDERR.puts "もう一度実行してください"
+  exit
+end
+Dir.mkdir(dir)
+
+path = File.expand_path(epfile)
+system "pushd #{dir} > /dev/null; unzip #{path} ; unzip -P `episopass episopass.html` episopass.zip; rm episopass.zip episopass.html ; popd > /dev/null"
+
+system "/bin/mv #{dir}/* ."
+system "/bin/rm -r #{dir}"
+
+
+
+
+
