@@ -27,7 +27,7 @@ if File.exist?(dir)
   exit
 end
 
-Dir.mkdir(dir)
+system "mkdir #{dir}"
 
 File.open("#{dir}/episopass.html","w"){ |f|
   f.print html
@@ -36,14 +36,17 @@ File.open("#{dir}/episopass.html","w"){ |f|
 zipfile = ARGV.shift
 if !zipfile
   STDERR.puts "出力ファイル名を指定してください"
+  system "/bin/rm -r #{dir}"
   exit
 end
 if zipfile !~ /\.episopass$/
   STDERR.puts "出力ファイルの拡張子は.episopassにしてください"
+  system "/bin/rm -r #{dir}"
   exit
 end
 if File.exist?(zipfile)
   STDERR.puts "#{zipfile}が既に存在します"
+  system "/bin/rm -r #{dir}"
   exit
 end
 

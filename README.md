@@ -23,6 +23,12 @@ EpisoPass画面をブラウザで開いてパスワード文字列を標準出�
 
     % unzip -P `episopass` my.zip
 
+## episozip, episounzip
+
+    % episozip [-P EpisoPassのHTMLのファイル名またはURL] output.episopass file1 file2 ...
+
+file1, file2, ... を暗号化して output.episopass というzipファイルを作る
+
 ## 考察
 
 秘密ファイルをこれで全部隠しておき、必要になったときEpisoPassで復元すると良いかもしれない
