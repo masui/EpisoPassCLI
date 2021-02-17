@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 #
-# % episozip [-P episopassのHTML] out.episopass file1 file2
+# % episozip [-P episopassのHTML] out.zip file1 file2
 #
 
 path = "#{__dir__}/../data/sample.html" # gemのファイル指定する方法は?
@@ -42,8 +42,8 @@ if !zipfile
   system "/bin/rm -r #{dir}"
   exit
 end
-if zipfile !~ /\.episopass$/
-  STDERR.puts "出力ファイルの拡張子は.episopassにしてください"
+if zipfile !~ /\.zip$/
+  STDERR.puts "出力ファイルの拡張子は.zipにしてください"
   system "/bin/rm -r #{dir}"
   exit
 end

@@ -25,15 +25,19 @@ EpisoPass画面をブラウザで開いてパスワード文字列を標準出�
 
 ## episozip, episounzip
 
-    % episozip [-P EpisoPassのHTMLのファイル名またはURL] output.episopass file1 file2 ...
+    % episozip [-P EpisoPassのHTMLのファイル名またはURL] output.zip file1 file2 ...
 
-file1, file2, ... を暗号化して output.episopass というzipファイルを作る
+file1, file2, ... を暗号化して output.zip というzipファイルを作る
+
+    % episounzip output.zip
+
+EpisoPass問題を解くと解凍できる
 
 ## 考察
 
 秘密ファイルをこれで全部隠しておき、必要になったときEpisoPassで復元すると良いかもしれない
 
-    % zip -e secretfiles.zip -P `episopass` .netrc .gem .npmrc .ssh/id_rsa ...
+    % episozip secretfiles.zip .netrc .gem .npmrc .ssh/id_rsa ...
 
 ## Issues
 

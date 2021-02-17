@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 #
-# % epunzip out.episopass
+# % epunzip out.zip
 #
 
 epfile = ARGV[0]
 if !epfile || !File.exist?(epfile)
-  STDERR.puts "% epunzip file.episopass"
+  STDERR.puts "% epunzip file.zip"
   exit
 end
 
