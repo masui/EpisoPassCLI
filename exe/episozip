@@ -3,7 +3,10 @@
 # % episozip [-P episopassのHTML] out.episopass file1 file2
 #
 
-path = File.expand_path("~/.episopass.html")
+path = "#{__dir__}/../data/sample.html" # gemのファイル指定する方法は?
+localpath = File.expand_path("~/.episopass.html")
+path = localpath if File.exist?(localpath)
+
 if ARGV[0] == "-P"
   path = ARGV[1]
   ARGV.shift 2
