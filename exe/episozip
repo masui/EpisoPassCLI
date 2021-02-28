@@ -7,6 +7,16 @@ path = "#{__dir__}/../data/sample.html" # gemのファイル指定する方法�
 localpath = File.expand_path("~/.episopass.html")
 path = localpath if File.exist?(localpath)
 
+def dir
+  "/tmp/EpisoPassDir#{$$}"
+end
+
+def usage
+  STDERR.puts "% episozip [-P episopassのHTML] out.zip file1 file2 ..."
+  system "/bin/rm -r #{dir}"
+  exit
+end
+
 if ARGV[0] == "-P"
   path = ARGV[1]
   ARGV.shift 2
@@ -21,13 +31,12 @@ end
 
 if html == ''
   STDERR.puts "EpisoPass問題(#{path})がみつかりません"
-  exit
+  usage
 end
 
-dir = "/tmp/EpisoPassDir#{$$}"
 if File.exist?(dir)
   STDERR.puts "もう一度試してください"
-  exit
+  usage
 end
 
 system "mkdir #{dir}"
@@ -39,18 +48,15 @@ File.open("#{dir}/episopass.html","w"){ |f|
 zipfile = ARGV.shift
 if !zipfile
   STDERR.puts "出力ファイル名を指定してください"
-  system "/bin/rm -r #{dir}"
-  exit
+  usage
 end
 if zipfile !~ /\.zip$/
   STDERR.puts "出力ファイルの拡張子は.zipにしてください"
-  system "/bin/rm -r #{dir}"
-  exit
+  usage
 end
 if File.exist?(zipfile)
   STDERR.puts "#{zipfile}が既に存在します"
-  system "/bin/rm -r #{dir}"
-  exit
+  usage
 end
 
 system "zip -e -P `episopass #{dir}/episopass.html` #{dir}/episopass.zip #{ARGV.join(' ')}"
