@@ -1,43 +1,58 @@
-# EpisoPass CLI
+<h1>EpisoPass CLI</h1>
 
-- EpisoPassをコマンドラインから使う
+<ul>
+  <li>EpisoPassをコマンドラインから使う</li>
+</ul>
 
-## インストール
+<h2>インストール</h2>
 
-    $ gem install episopass
+<code>$ gem install episopass</code>
 
-## 使い方
+<h2>使い方</h2>
 
 EpisoPass画面をブラウザで開いてパスワード文字列を標準出力で得る
 
-    % episopass [EpisoPassのHTMLのファイル名またはURL]
+<blockquote>
+  <code>% episopass [EpisoPassのHTMLのファイル名またはURL]</code>
+</blockquote>
 
-`~/.episopass.html` があればこれが使われる
+<code>~/.episopass.html</code> があればこれが使われる
 
 
 パスワードつきzipを作る
 
-    % zip -e my.zip -P `episopass` file1 file2
+<blockquote>
+  <code>% zip -e my.zip -P `episopass` file1 file2</code>
+</blockquote>
 
 パスワードつきzipを解凍する
 
-    % unzip -P `episopass` my.zip
+<blockquote>
+  <code>% unzip -P `episopass` my.zip</code>
+</blockquote>
 
-## episozip, episounzip
+<h2>episozip, episounzip</h2>
 
-    % episozip [-P EpisoPassのHTMLのファイル名またはURL] output.zip file1 file2 ...
+<blockquote>
+  <code>% episozip [-P EpisoPassのHTMLのファイル名またはURL] output.zip file1 file2 ...</code>
+</blockquote>
 
 file1, file2, ... を暗号化して output.zip というzipファイルを作る
 
-    % episounzip output.zip
+<blockquote>
+  <code>% episounzip output.zip</code>
+<blockquote>
 
 EpisoPass問題を解くと解凍できる
 
-## 考察
+<h2>考察</h2>
 
 秘密ファイルをこれで全部隠しておき、必要になったときEpisoPassで復元すると良いかもしれない
 
-    % episozip secretfiles.zip .netrc .gem .npmrc .ssh/id_rsa ...
+<blockquote>
+  <code>% episozip secretfiles.zip .netrc .gem .npmrc .ssh/id_rsa ...</code>
+<blockquote>
 
-## Issues
+<h2>Issues</h2>
 
+論文化とか
