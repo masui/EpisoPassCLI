@@ -1,8 +1,6 @@
 <h1>EpisoPass CLI</h1>
 
-<ul>
-  <li>EpisoPassをコマンドラインから使う</li>
-</ul>
+EpisoPassをコマンドラインから使う
 
 <h2>インストール</h2>
 
@@ -55,4 +53,6 @@ EpisoPass問題を解くと解凍できる
 
 <h2>Issues</h2>
 
-論文化とか
+<ul>
+  <li>論文化とか</li>
+</ul>
