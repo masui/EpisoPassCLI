@@ -41,7 +41,7 @@ file1, file2, ... を暗号化して output.zip というzipファイルを作�
 
 <blockquote>
   <code>% episounzip output.zip</code>
-<blockquote>
+</blockquote>
 
 EpisoPass問題を解くと解凍できる
 
@@ -51,7 +51,7 @@ EpisoPass問題を解くと解凍できる
 
 <blockquote>
   <code>% episozip secretfiles.zip .netrc .gem .npmrc .ssh/id_rsa ...</code>
-<blockquote>
+</blockquote>
 
 <h2>Issues</h2>
 
