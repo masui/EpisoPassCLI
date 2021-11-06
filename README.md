@@ -4,16 +4,21 @@ EpisoPassをコマンドラインから使う
 
 <h2>インストール</h2>
 
-<code>$ gem install episopass</code>
+<div class="snippet-clipboard-content position-relative overflow-auto">
+  <pre>
+    <code>$ gem install episopass</code>
+  </pre>
+</div>
 
 <h2>使い方</h2>
 
 EpisoPass画面をブラウザで開いてパスワード文字列を標準出力で得る
 
 <div class="snippet-clipboard-content position-relative overflow-auto">
-<pre>
-  <code>% episopass [EpisoPassのHTMLのファイル名またはURL]</code>
-</pre><blockquote>
+  <pre>
+    <code>% episopass [EpisoPassのHTMLのファイル名またはURL]</code>
+  </pre>
+</div>
 
 <code>~/.episopass.html</code> があればこれが使われる
 
