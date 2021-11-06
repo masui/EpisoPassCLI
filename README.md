@@ -14,9 +14,9 @@ EpisoPassをコマンドラインから使う
 
 EpisoPass画面をブラウザで開いてパスワード文字列を標準出力で得る
 
-<div class="snippet-clipboard-content position-relative overflow-auto">
-    <code>% episopass [EpisoPassのHTMLのファイル名またはURL]</code>
-</div>
+<pre>
+  <code>% episopass [EpisoPassのHTMLのファイル名またはURL]</code>
+</pre>
 
 <code>~/.episopass.html</code> があればこれが使われる
 
