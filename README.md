@@ -4,11 +4,9 @@ EpisoPassをコマンドラインから使う
 
 <h2>インストール</h2>
 
-<div class="snippet-clipboard-content position-relative overflow-auto">
-  <pre>
-    <code>$ gem install episopass</code>
-  </pre>
-</div>
+<pre>
+  <code>$ gem install episopass</code>
+</pre>
 
 <h2>使い方</h2>
 
