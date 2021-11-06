@@ -10,9 +10,10 @@ EpisoPassをコマンドラインから使う
 
 EpisoPass画面をブラウザで開いてパスワード文字列を標準出力で得る
 
-<blockquote>
+<div class="snippet-clipboard-content position-relative overflow-auto">
+<pre>
   <code>% episopass [EpisoPassのHTMLのファイル名またはURL]</code>
-</blockquote>
+</pre><blockquote>
 
 <code>~/.episopass.html</code> があればこれが使われる
 
