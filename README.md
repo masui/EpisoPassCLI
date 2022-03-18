@@ -53,6 +53,8 @@ EpisoPass問題を解くと解凍できる
   <code>% episozip secretfiles.zip .netrc .gem .npmrc .ssh/id_rsa ...</code>
 </pre>
 
+解凍するときパスワードを覚えておかなくて良いのは秀逸と思うのだが
+
 <h2>Issues</h2>
 
 <ul>
