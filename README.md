@@ -33,17 +33,17 @@ EpisoPass画面をブラウザで開いてパスワード文字列を標準出�
 
 <h2>episozip, episounzip</h2>
 
+file1, file2, ... を暗号化して output.zip というzipファイルを作る
+
 <pre>
   <code>% episozip [-P EpisoPassのHTMLのファイル名またはURL] output.zip file1 file2 ...</code>
 </pre>
 
-file1, file2, ... を暗号化して output.zip というzipファイルを作る
+EpisoPass問題を解くと解凍できる
 
 <pre>
   <code>% episounzip output.zip</code>
 </pre>
-
-EpisoPass問題を解くと解凍できる
 
 <h2>考察</h2>
 
